@@ -28,10 +28,10 @@ public class DemoDaoService {
 		doc.getDocumentElement().normalize();
 		List<StudentBean> stuList = new ArrayList<StudentBean>();
 		System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
-		StudentBean stuBean = new StudentBean();
 		NodeList nodeList = doc.getElementsByTagName("student");
 		for (int itr = 0; itr < nodeList.getLength(); itr++) {
 			Node studentNode = nodeList.item(itr);
+			StudentBean stuBean = new StudentBean();
 			if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element studentElement = (Element) studentNode;
 				stuBean.setId(studentElement.getElementsByTagName("id").item(0).getTextContent());
