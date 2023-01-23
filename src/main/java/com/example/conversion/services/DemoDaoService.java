@@ -31,8 +31,8 @@ public class DemoDaoService {
 		NodeList nodeList = doc.getElementsByTagName("student");
 		for (int itr = 0; itr < nodeList.getLength(); itr++) {
 			Node studentNode = nodeList.item(itr);
-			StudentBean stuBean = new StudentBean();
 			if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
+				StudentBean stuBean = new StudentBean();
 				Element studentElement = (Element) studentNode;
 				stuBean.setId(studentElement.getElementsByTagName("id").item(0).getTextContent());
 				stuBean.setFirstname(studentElement.getElementsByTagName("firstname").item(0).getTextContent());
